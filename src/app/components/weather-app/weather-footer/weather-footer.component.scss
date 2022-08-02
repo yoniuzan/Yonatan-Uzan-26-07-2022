@@ -1,0 +1,14 @@
+.weather-footer-wrapper {
+    position: sticky;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 0 4vw;
+    margin-inline-start: auto;
+    
+    span {
+        color: white;
+    }
+}

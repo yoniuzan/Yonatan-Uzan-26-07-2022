@@ -1,0 +1,14 @@
+<div class="weather-main-wrapper">
+
+    <ng-container [ngSwitch]="_selectedTab">
+        <ng-container *ngSwitchCase="enums.WeatherTab.Home">
+            <weather-home> </weather-home>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="enums.WeatherTab.Favorite">
+            <weather-favorite> </weather-favorite>
+        </ng-container>
+
+    </ng-container>
+</div>
+

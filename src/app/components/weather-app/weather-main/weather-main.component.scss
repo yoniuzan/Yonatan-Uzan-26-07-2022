@@ -1,0 +1,35 @@
+@import "../../../styles/responsive.scss";
+
+@mixin weather-page {
+    height: 100%;
+    width: 100%;
+
+    // @include md {
+    //     width: 100%;
+    // }
+}
+
+.weather-main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 4vw 4vw;
+    overflow-y: scroll;
+    
+    @include sm {
+        padding: 50px 50px;
+        
+    }
+
+    weather-home {
+        @include weather-page();
+    }
+
+    weather-favorite {
+        @include weather-page();
+    }
+}

@@ -1,0 +1,14 @@
+<div class="weather-day" [ngClass]="{'is-night': !_isDayTime}">
+    <span class="day"> {{_dayName}} </span>
+    <div class="degrees">
+        <span> 
+            {{_item.MinTemperature | temperatureConvert : _tempType}} 
+            -
+            {{_item.MaxTemperature | temperatureConvert : _tempType}}
+        </span>
+    </div>
+
+    <span class="description">
+        {{_isDayTime ? _item.DayDescription : _item.NightDescription}}
+    </span>
+</div>

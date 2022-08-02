@@ -1,0 +1,35 @@
+@mixin section {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+}
+
+.weather-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+
+    weather-header {
+        @include section();
+        height: 75px;
+
+        background-color: #334e6e;
+    }
+
+    weather-main {
+        @include section();
+        justify-content: center;
+        height: calc(100% - 120px);
+    }
+
+    weather-footer {
+        @include section();
+        height: 45px;
+
+        background-color: #334e6e;
+    }
+}

@@ -1,0 +1,13 @@
+<div class="weather-header-wrapper">
+    <mat-slide-toggle [checked]="_theme == enums.Theme.Dark"
+    (change)="toggleDarkTheme($event)"></mat-slide-toggle>
+    <span class="title">World Weather</span>
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button *ngFor="let tab of _tabs" type="button" class="btn"
+            [ngClass]="{'btn-warning': tab.selected, 'btn-light': !tab.selected}"
+            (click)="onSwitch(tab)">
+            {{tab.name}}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,154 @@
+@import "../../../../styles/responsive.scss";
+
+.wheather-input {
+    margin-block-end: 1rem;
+    height: 2.5rem;
+}
+
+.list {
+    overflow-y: scroll;
+
+    &.search {
+        max-height: 45vw;
+
+        @include sm {
+            max-height: 120px;
+        }
+    }
+
+    .select-info {
+        display: flex;
+        align-items: center;
+        height: 15vw;
+        width: 100%;
+        background-color: white;
+        border: 0.1vw solid rgba(0, 0, 0, 0.2);
+        padding: 0vw 2vw;
+        color: black;
+        cursor: pointer;
+
+        @include sm {
+            height: 40px;
+            width: 300px;
+        }
+
+        &.selected {
+            color: #2196f3;
+            font-weight: 600;
+        }
+
+        .text {
+            font-size: 4.5vw;
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            @include sm {
+                font-size: 15px;
+            }
+        }
+    }
+    :hover {
+        background-color: #d5dce7;
+    }
+}
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 2.5rem);
+
+    padding: 5vw;
+
+    border: 1px solid;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    &.is-day {
+        background-image: url("../../../../assets/day.jpg");
+    }
+
+    &.is-night {
+        background-image: url("../../../../assets/night.jpg");
+        color: white;
+    }
+
+    @include md {
+        padding: 20px;
+    }
+
+    .selectd-and-favorite {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+
+        .selected {
+            display: flex;
+
+            .selected-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-inline-start: 2vw;
+            }
+
+            .line {
+                margin: 0vw 2vw;
+                border: 1px solid black;
+
+                &.is-night {
+                    border: 1px solid #fff;
+                }
+            }
+        }
+
+        .favorite {
+            display: flex;
+
+            i {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .title-weather {
+        display: flex;
+        align-items: center;
+        font-size: 10vw;
+        height: 10vw;
+        margin-block-end: 5vw;
+        text-align: center;
+
+        @include md {
+            font-size: 30px;
+        }
+    }
+
+    .next-weather-days {
+        display: flex;
+
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+
+        height: 100%;
+        width: 100%;
+
+        list-style-type: none;
+        overflow-y: scroll;
+
+        @include md {
+            flex-wrap: wrap;
+            flex-direction: row;
+            height: unset;
+            overflow-y: unset;
+        }
+    }
+}

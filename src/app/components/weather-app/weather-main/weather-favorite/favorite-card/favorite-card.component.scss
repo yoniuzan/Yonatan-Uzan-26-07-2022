@@ -1,0 +1,51 @@
+@import "../../../../../styles/responsive.scss";
+
+.favorite-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 45vw;
+    height: 45vw;
+    background-color: #cadde8;
+
+    margin-block-end: 2vw;
+
+    @include md {
+        width: 10rem;
+        height: 12rem;
+        margin-inline-start: 2vw;
+    }
+
+    .name {
+        font-weight: bold;
+        font-size: 6vw;
+
+        @include md {
+            font-size: 30px;
+        }
+    }
+
+    .degrees {
+        margin-block-start: 4vw;
+        color: #ffc107;
+        font-weight: bold;
+        font-size: 4vw;
+
+        @include md {
+            margin-block-start: 16px;
+            font-size: 16px;
+        }
+    }
+
+    .description {
+        text-align: center;
+        font-size: 4vw;
+        @include md {
+            font-weight: bold;
+            margin-block-start: 16px;
+            font-size: 16px;
+        }
+    }
+}

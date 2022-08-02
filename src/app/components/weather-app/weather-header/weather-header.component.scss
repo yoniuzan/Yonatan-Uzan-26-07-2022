@@ -1,0 +1,25 @@
+@import "../../../styles/responsive.scss";
+
+.weather-header-wrapper {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 0 4vw;
+
+    @include md {
+        padding: 0 50px;
+    }
+
+    .checkd {
+        background-color: green;
+    }
+
+    .title {
+        font-size: 20px;
+        color: white;
+    }
+}

@@ -1,0 +1,46 @@
+<div>
+    <input type="text" placeholder="Search" class="form-control search-input wheather-input"
+        #filter>
+
+    <div *ngIf="!_isEmpty" class="list" [ngClass]="{'search': _locationList.length > 5}">
+        <div *ngFor="let item of _data$ | async ;trackBy trackByIndex" class="select-info" (click)="onItemSelect(item)">
+            <span class="text">{{item.Name}}</span>
+        </div>
+    </div>
+
+    <div class="weather-container" *ngIf="_weatherToShow"
+        [ngClass]="{'is-day': _weatherToShow.IsDayTime, 'is-night': !_weatherToShow.IsDayTime}">
+        <div class="selectd-and-favorite">
+            <div class="selected">
+                <i *ngIf="_weatherToShow.IsDayTime" class='fas fa-sun fa-3x'></i>
+                <i *ngIf="!_weatherToShow.IsDayTime" class='far fa-moon fa-3x'></i>
+                <div class="selected-info">
+                    <span>{{_cityLocation.Name}}</span>
+                    <span class="degrees"> {{_weatherToShow.ImperialTemperature | temperatureConvert: _tempType}}
+                    </span>
+                </div>
+
+                <span class="line" [ngClass]="{'is-night': !_weatherToShow.IsDayTime}"></span>
+                <button type="button" class="btn btn-secondary" (click)="changeTemp(_tempType)">{{_tempType !=
+                    enums.Degrees.Celsius ? 'C' : 'F'}}</button>
+
+            </div>
+
+            <!-- TODO Change it to one -->
+            <div class="favorite">
+                <i *ngIf="!_weatherToShow.IsFavorite" (click)="add(_cityLocation.Id)"
+                    class="far fa-heart fa-2x"></i>
+                <i *ngIf="_weatherToShow.IsFavorite" (click)="remove(_cityLocation.Id)" class="fas fa-heart fa-2x"></i>
+            </div>
+        </div>
+
+        <span class="title-weather"> {{_weatherToShow.WeatherText}}</span>
+
+        <ul class="next-weather-days">
+            <li *ngFor="let item of _nextWeatherDayes">
+                <weather-day [item]="item"> </weather-day>
+            </li>
+        </ul>
+    </div>
+
+</div>
